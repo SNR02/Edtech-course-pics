@@ -1,0 +1,569 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+
+:root{
+    --purple:#814096;
+    --pink:#F83292;
+    --gradient:linear-gradient(90deg, var(--purple), var(--pink));
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border:none;
+    text-transform: capitalize;
+}
+
+*::selection{
+    background:var(--pink);
+    color:#fff;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    background:#f9f9f9;
+    overflow-y: scroll; /* Add the ability to scroll */
+    overflow-x: hidden;
+}
+
+header{
+    position: absolute;
+    top:0; left:0;
+    width:100%;
+    padding:10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    margin-left:10px;
+}
+
+header .navbar a{
+    font-size: 1.7rem;
+    margin-right: 20px;
+    color:var(--black);
+}
+.navbar{
+    margin-right: 50px;
+}
+.navbar a{
+    display: inline-block;
+    position: relative;
+    color: #f83292;
+}
+
+.navbar a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #f83292;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+}
+
+.navbar a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+header input{
+    display: none;
+}
+
+.intro{
+    width: 100%;
+    height: 5rem;
+    margin-top: 1rem;
+    position: relative;
+    left: 10rem;
+    margin-bottom: -5rem;
+}
+.intro .navbar {
+    text-align: center;
+    width: 90%;
+}
+.intro .navbar ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 10rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
+    background-color: #f5f0f0;
+}
+.intro .navbar ul a{
+    color: #F83292;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    padding: 2rem;
+}
+.intro .navbar ul a:hover{
+    color: #814096;
+}
+
+.main{
+    position: relative;
+    left: 7rem;
+    max-width: max-content;
+    margin: auto;
+    margin-top: 15rem ;
+    margin-left: 5rem;
+    margin-right: 15rem;
+}
+
+.main h2{
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-left: 5rem;
+    color: black;
+ }
+.programming , .wd .content{
+    margin-bottom: 5rem;
+}
+.row{
+    padding: 8px - 16px;
+}
+
+.row, .row > .column{
+    padding: 8px ;
+}
+
+.column {
+    float: left;
+    width: 30%;
+    margin: 20px;
+  }
+  
+.column .content:hover{
+    box-shadow: 0 .5rem 1rem rgb(248, 50, 146,0.4);
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+.content {
+    background-color: white;
+    padding: 10px;
+    border-radius: 1.5rem;
+    color: #333333;
+  }
+
+.content .flex-container{
+    display: flex;
+    justify-content: space-between;
+    font-size: small;
+}
+
+.content .count i{
+    color: #fc80bc;
+}
+
+.content .rating i{
+    color:  rgb(255, 200, 0);
+}
+
+.content .count,
+.rating span{
+    color: black;
+}
+
+.content h3{
+    color: #814096;
+    font-size: large;
+    animation-name: courseName;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes courseName{
+    0% {
+        color: #814096;
+        opacity: 10;
+    }
+    100% {
+        color: #F83292;
+        opacity: 10;
+    }
+}
+
+.content h4{
+    margin-top: 1rem;
+    font-weight: 400;
+}
+.content .details{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    color: grey;
+}
+
+.content .details .hours,.ass{
+    border-right: double;
+    border-right-width: 0.5rem;
+}
+
+@media screen and (max-width: 900px) {
+    .column {
+      width: 50%;
+    }
+  }
+  
+
+@media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
+
+.footer{
+    padding-top: 3rem;
+    background: var(--gradient)
+}
+
+.footer .box-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer .box-container img{
+    width:200px;
+    display: inline-block;
+    margin-bottom: 70px;
+}
+
+.wrapper {
+    display: inline-flex;
+    list-style: none;
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background: #ffffff;
+    border-radius: 50%;
+    /*padding: 15px;*/
+    padding-bottom: 3rem;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip {
+    position: relative;
+    top: 0;
+    font-size: 14px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: relative;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877F2;
+    color: #ffffff;
+  }
+  
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1DA1F2;
+    color: #ffffff;
+  }
+  
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #E4405F;
+    color: #ffffff;
+  }
+  
+  .wrapper .github:hover,
+  .wrapper .github:hover .tooltip,
+  .wrapper .github:hover .tooltip::before {
+    background: #333333;
+    color: #ffffff;
+  }
+  
+  .wrapper .linkedin:hover,
+  .wrapper .linkedin:hover .tooltip,
+  .wrapper .linkedin:hover .tooltip::before {
+    background:#006599;
+    color: #ffffff;
+  }
+
+.footer .box-container .box{
+    flex:1 1 25rem;
+    margin:3rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    padding:1rem 0;
+    color:#fff;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+}
+
+.footer .box-container .box p{
+    font-size: 1.5rem;
+    padding:.5rem 0;
+    color:#eee;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.5rem;
+    padding:.5rem 0;
+    color:#eee;
+}
+
+.footer .box-container .box a:hover{
+    text-decoration: underline;
+}
+
+.footer .box-container .box .info{
+    display: flex;
+    align-items: center;
+}
+
+.footer .box-container .box .info i{
+    margin:.5rem 0;
+    margin-right: 1rem;
+    border-radius: 50%;
+    background:#fff;
+    color:var(--pink);
+    font-size: 1.5rem;
+    height:4.5rem;
+    width:4.5rem;
+    line-height: 4.5rem;
+    text-align: center;
+}
+
+.footer .credit{
+    font-size: 2rem;
+    font-weight: normal;
+    letter-spacing: .1rem;
+    color:#fff;
+    border-top: .1rem solid #fff5;
+    padding:2.5rem 1rem;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*
+.footer{
+    padding-top: 3rem;
+    background: var(--gradient)
+}
+
+.footer .box-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer .box-container .box{
+    flex:1 1 25rem;
+    margin:3rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    padding:1rem 0;
+    color:#fff;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+}
+
+.footer .box-container .box p{
+    font-size: 1.5rem;
+    padding:.5rem 0;
+    color:#eee;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.5rem;
+    padding:.5rem 0;
+    color:#eee;
+}
+
+.footer .box-container .box a:hover{
+    text-decoration: underline;
+}
+
+.footer .box-container .box .info{
+    display: flex;
+    align-items: center;
+}
+
+.footer .box-container .box .info i{
+    margin:.5rem 0;
+    margin-right: 1rem;
+    border-radius: 50%;
+    background:#fff;
+    color:var(--pink);
+    font-size: 1.5rem;
+    height:4.5rem;
+    width:4.5rem;
+    line-height: 4.5rem;
+    text-align: center;
+}
+
+.footer .credit{
+    font-size: 2rem;
+    font-weight: normal;
+    letter-spacing: .1rem;
+    color:#fff;
+    border-top: .1rem solid #fff5;
+    padding:2.5rem 1rem;
+    text-align: center;
+}
+
+/*.box{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 120px;
+    height: 120px;
+    background-color: rgb(136, 136, 235);
+    border: 2px solid black;
+    margin: 10px;
+    padding: 1.5rem;
+}
+
+.box img {
+    width: 250%;
+    height: 250%;
+}
+.box img {
+    object-fit: fill;
+}*/
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+
+:root{
+    --purple:#814096;
+    --pink:#F83292;
+    --gradient:linear-gradient(90deg, var(--purple), var(--pink));
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border:none;
+    text-transform: capitalize;
+}
+
+*::selection{
+    background:var(--pink);
+    color:#fff;
+}
+
+.header{
+    padding: 3rem;
+    color: #814096;
+}
+
+.courseDetails .container{
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    margin-left: 1rem;
+    justify-content: space-around;
+    margin-right: 5rem;
+}
+
+.courseDetails .container .box img{
+    width: 25rem;
+    height: 10rem;
+    
+}
+
+.courseDetails .container h3,i{
+    color: #814096;
+}
+
+.courseDetails .container .box{
+    background:#fff;
+    margin: 1rem;
+    text-align: center;
+    position: relative;
+    border:.1rem solid rgba(0,0,0,.2);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    flex:1 1 25rem;
+    border-radius: .5rem;
+}
+
+.courseDetails .container .box:hover{
+    box-shadow: 0 .5rem 1rem rgb(248, 50, 146,0.4);
+}
+*/
